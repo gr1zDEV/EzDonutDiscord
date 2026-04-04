@@ -7,6 +7,28 @@ const mobileOverlay = document.getElementById('mobileOverlay');
 const searchInput = document.getElementById('searchInput');
 const topbarTitle = document.getElementById('topbarTitle');
 const tocContainer = document.getElementById('tocLinks');
+const orderedPageIds = docs.groups.flatMap((group) => group.pages.map((page) => page.id));
+
+function getPagerInfo(pageId, direction) {
+  const currentIndex = orderedPageIds.indexOf(pageId);
+  if (currentIndex === -1 || !orderedPageIds.length) {
+    return null;
+  }
+
+  const offset = direction === 'prev' ? -1 : 1;
+  const targetIndex = (currentIndex + offset + orderedPageIds.length) % orderedPageIds.length;
+  const targetId = orderedPageIds[targetIndex];
+  const targetPage = docs.pages[targetId];
+  const fallbackTitle = docs.groups
+    .flatMap((group) => group.pages)
+    .find((page) => page.id === targetId)?.label ?? targetId;
+
+  return {
+    id: targetId,
+    title: targetPage?.topbarTitle || fallbackTitle,
+    desc: direction === 'prev' ? 'Go to the previous page in the sidebar.' : 'Go to the next page in the sidebar.'
+  };
+}
 
 function renderSidebar() {
   const groupsMarkup = docs.groups
@@ -23,6 +45,8 @@ function renderSidebar() {
 
 function renderPage(pageId) {
   const page = docs.pages[pageId] || docs.pages.index;
+  const prevPage = getPagerInfo(pageId, 'prev') || page.prev;
+  const nextPage = getPagerInfo(pageId, 'next') || page.next;
   const meta = page.meta.map((item) => `<span>${item}</span>`).join('<span>·</span>');
 
   contentRoot.innerHTML = `
@@ -30,17 +54,17 @@ function renderPage(pageId) {
       <div class="page-meta">${meta}</div>
       ${page.content}
       <div class="pager">
-        <a class="pager-link prev" href="#/${page.prev.id}">
+        <a class="pager-link prev" href="#/${prevPage.id}">
           <span class="pager-arrow">←</span>
           <div class="pager-eyebrow">Previous</div>
-          <div class="pager-title">${page.prev.title}</div>
-          <div class="pager-desc">${page.prev.desc}</div>
+          <div class="pager-title">${prevPage.title}</div>
+          <div class="pager-desc">${prevPage.desc}</div>
         </a>
-        <a class="pager-link next" href="#/${page.next.id}">
+        <a class="pager-link next" href="#/${nextPage.id}">
           <span class="pager-arrow">→</span>
           <div class="pager-eyebrow">Next</div>
-          <div class="pager-title">${page.next.title}</div>
-          <div class="pager-desc">${page.next.desc}</div>
+          <div class="pager-title">${nextPage.title}</div>
+          <div class="pager-desc">${nextPage.desc}</div>
         </a>
       </div>
     </article>
