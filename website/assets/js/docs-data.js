@@ -1,161 +1,381 @@
 window.DOCS_DATA = {
   groups: [
     {
-      title: 'Getting Started',
+      title: 'Overview',
       pages: [
-        { id: 'index', label: 'Introduction' },
-        { id: 'installation', label: 'Installation' },
-        { id: 'quick-start', label: 'Quick Start' }
+        { id: 'index', label: 'EzDonutDiscord' },
+        { id: 'changelog', label: 'Changelog' },
+        { id: 'faq', label: 'FAQ' }
       ]
     },
     {
-      title: 'Reference',
+      title: 'Getting Started',
+      pages: [
+        { id: 'installation', label: 'Installation' },
+        { id: 'configuration', label: 'Configuration' }
+      ]
+    },
+    {
+      title: 'Features',
+      pages: [
+        { id: 'discord-message-flow', label: 'Discord Message Flow' },
+        { id: 'placeholderapi', label: 'PlaceholderAPI' }
+      ]
+    },
+    {
+      title: 'Usage',
       pages: [
         { id: 'commands', label: 'Commands' },
-        { id: 'permissions', label: 'Permissions' },
-        { id: 'configuration', label: 'Configuration' },
-        { id: 'placeholders', label: 'Placeholders' },
-        { id: 'faq', label: 'FAQ' }
+        { id: 'permissions', label: 'Permissions' }
       ]
     }
   ],
   pages: {
     index: {
-      title: 'YourPlugin Docs',
-      topbarTitle: 'YourPlugin Docs',
-      meta: ['Getting Started', 'Home'],
+      title: 'EzDonutDiscord Docs',
+      topbarTitle: 'EzDonutDiscord',
+      meta: ['Overview', 'Home'],
       content: `
-        <div class="page-badge">Production-ready template · GitBook-style docs</div>
-        <h1>YourPlugin documentation template for real server owners</h1>
-        <p class="lead">This template is split into maintainable files and includes realistic sample content for a Minecraft plugin documentation website.</p>
-        <div class="hero-grid">
-          <article class="card"><div class="card-label">Audience</div><h3>Server owners & staff teams</h3><p>Clear setup guides, command references, and config examples your users can copy directly.</p></article>
-          <article class="card"><div class="card-label">Maintenance</div><h3>Organized by page and feature</h3><p>Update one page at a time instead of editing one huge HTML file.</p></article>
-        </div>
-        <section id="overview"><h2>Overview</h2><p>YourPlugin is an example moderation + utility plugin focused on simple onboarding and clear command behavior.</p></section>
-        <section id="features"><h2>Core features</h2><div class="feature-grid"><div class="feature"><div class="feature-badge">✓</div><div><strong>Moderation tools</strong><span>Warn, mute, and temporary punishments with audit logging.</span></div></div><div class="feature"><div class="feature-badge">✓</div><div><strong>Reward crates</strong><span>Crate keys, weighted rewards, and GUI preview support.</span></div></div><div class="feature"><div class="feature-badge">✓</div><div><strong>PlaceholderAPI support</strong><span>Display player and server stats in scoreboards.</span></div></div><div class="feature"><div class="feature-badge">✓</div><div><strong>Hot-reload safe config</strong><span>Reload docs-friendly YAML with clear comments.</span></div></div></div></section>
+        <h1>EzDonutDiscord</h1>
+        <p class="lead">EzDonutDiscord is a lightweight Paper and Folia plugin that gives players a polished <span class="inline-code">/discord</span> command with a configurable clickable invite.</p>
+
+        <section id="features"><h2>Features</h2>
+          <ul>
+            <li>Clickable Discord invite with hover text</li>
+            <li>Configurable chat, action bar, and reload messages</li>
+            <li>Optional pling sound feedback</li>
+            <li>Folia support</li>
+            <li>PlaceholderAPI support</li>
+            <li>Admin reload command</li>
+          </ul>
+        </section>
+
+        <section id="downloads"><h2>Downloads</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Platform</th><th>Link</th></tr></thead>
+            <tbody>
+              <tr><td>GitHub Releases</td><td>Not configured in this repository</td></tr>
+              <tr><td>SpigotMC</td><td>Not published</td></tr>
+              <tr><td>BuiltByBit</td><td>Not published</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="requirements"><h2>Requirements</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Requirement</th><th>Version</th></tr></thead>
+            <tbody>
+              <tr><td>Java</td><td>21+</td></tr>
+              <tr><td>Paper / Folia</td><td>1.21+</td></tr>
+              <tr><td>Required Plugins</td><td>None</td></tr>
+              <tr><td>Optional Plugins</td><td>PlaceholderAPI 2.11.6+</td></tr>
+            </tbody>
+          </table></div>
+        </section>
       `,
-      prev: { id: 'faq', title: 'FAQ', desc: 'Review common support questions.' },
-      next: { id: 'installation', title: 'Installation', desc: 'Install on Paper or Purpur.' }
+      prev: { id: 'permissions', title: 'Permissions', desc: 'Review permission defaults and guidance.' },
+      next: { id: 'changelog', title: 'Changelog', desc: 'See release notes and recent additions.' }
     },
+
+    changelog: {
+      title: 'Changelog · EzDonutDiscord Docs',
+      topbarTitle: 'Changelog',
+      meta: ['Overview', 'Releases'],
+      content: `
+        <h1>Changelog</h1>
+        <section id="latest"><h2>v1.0.0 - Latest</h2>
+          <p><strong>Released:</strong> TBD</p>
+        </section>
+
+        <section id="added"><h2>Added</h2>
+          <ul>
+            <li>Initial EzDonutDiscord release for Paper and Folia 1.21+</li>
+            <li><span class="inline-code">/discord</span> command with clickable invite output</li>
+            <li><span class="inline-code">/discord reload</span> support for live config refreshes</li>
+            <li>Configurable hover text, action bar feedback, and pling sound playback</li>
+            <li>Optional PlaceholderAPI parsing and <span class="inline-code">%ezdonutdiscord_link_raw%</span> / <span class="inline-code">%ezdonutdiscord_link_display%</span> placeholders</li>
+          </ul>
+        </section>
+      `,
+      prev: { id: 'index', title: 'EzDonutDiscord', desc: 'Back to the project overview.' },
+      next: { id: 'faq', title: 'FAQ', desc: 'Read common troubleshooting answers.' }
+    },
+
+    faq: {
+      title: 'FAQ · EzDonutDiscord Docs',
+      topbarTitle: 'FAQ',
+      meta: ['Overview', 'Support'],
+      content: `
+        <h1>FAQ</h1>
+
+        <section id="loading"><h2>The plugin is not loading. What should I check first?</h2>
+          <p>Confirm that your server is running Java 21+ and Paper or Folia 1.21+. Then check <span class="inline-code">logs/latest.log</span> for startup errors.</p>
+        </section>
+
+        <section id="folia"><h2>Can I use this on Folia?</h2>
+          <p>Yes. <span class="inline-code">plugin.yml</span> marks EzDonutDiscord as Folia-supported.</p>
+        </section>
+
+        <section id="papi"><h2>Why are my PlaceholderAPI placeholders not resolving?</h2>
+          <p>Make sure PlaceholderAPI is installed, <span class="inline-code">placeholderapi.enabled</span> is still <span class="inline-code">true</span>, and you are testing with a player sender. Console senders do not get PlaceholderAPI parsing.</p>
+        </section>
+
+        <section id="tab-complete"><h2>Why can some staff members tab-complete <span class="inline-code">/discord reload</span> but others cannot?</h2>
+          <p>The plugin only exposes the <span class="inline-code">reload</span> tab completion to senders with <span class="inline-code">ezdonutdiscord.reload</span> or <span class="inline-code">ezdonutdiscord.admin</span>.</p>
+        </section>
+
+        <section id="reloading"><h2>Can I reload the config without restarting the whole server?</h2>
+          <p>Yes. Use <span class="inline-code">/discord reload</span>. For jar updates, a full restart is still recommended.</p>
+        </section>
+      `,
+      prev: { id: 'changelog', title: 'Changelog', desc: 'Back to the latest release notes.' },
+      next: { id: 'installation', title: 'Installation', desc: 'Set up the plugin on your server.' }
+    },
+
     installation: {
-      title: 'Installation · YourPlugin Docs',
+      title: 'Installation · EzDonutDiscord Docs',
       topbarTitle: 'Installation',
       meta: ['Getting Started', 'Setup'],
       content: `
         <h1>Installation</h1>
-        <p class="lead">Follow this guide to install YourPlugin on a Paper 1.20.6+ server in under 5 minutes.</p>
-        <section id="requirements"><h2>Requirements</h2><ul><li>Java 21+</li><li>Paper or Purpur 1.20.6+</li><li>LuckPerms (recommended)</li><li>PlaceholderAPI (optional)</li></ul></section>
-        <section id="steps"><h2>Install steps</h2><ol><li>Download <span class="inline-code">YourPlugin-x.y.z.jar</span>.</li><li>Move it to <span class="inline-code">/plugins</span>.</li><li>Start server once to generate config.</li><li>Edit config files and restart.</li></ol><div class="code-block"><div class="code-head">Linux shell</div><pre>cd /home/mc/server/plugins
-curl -L -o YourPlugin.jar https://example.com/YourPlugin.jar
-cd ..
-./start.sh</pre></div></section>
-        <section id="verify"><h2>Verify plugin boot</h2><p>On successful startup, you should see a log similar to:</p><div class="code-block"><div class="code-head">Server console</div><pre>[YourPlugin] Loading configuration...
-[YourPlugin] Connected to data storage: SQLITE
-[YourPlugin] Registered 14 commands and 19 permissions.
-[YourPlugin] Plugin enabled successfully.</pre></div></section>
-      `,
-      prev: { id: 'index', title: 'Introduction', desc: 'Return to docs overview.' },
-      next: { id: 'quick-start', title: 'Quick Start', desc: 'Configure first features quickly.' }
-    },
-    'quick-start': {
-      title: 'Quick Start · YourPlugin Docs',
-      topbarTitle: 'Quick Start',
-      meta: ['Getting Started', 'Quick Start'],
-      content: `
-        <h1>Quick Start</h1>
-        <p class="lead">Set up your first moderation and reward flow with copy/paste examples.</p>
-        <section id="first-config"><h2>First configuration</h2><div class="code-block"><div class="code-head">plugins/YourPlugin/config.yml</div><pre>storage:
-  type: sqlite
-  file: data.db
 
-moderation:
-  warn-expiration-days: 30
-  mute-default-duration: 15m
+        <section id="requirements"><h2>Requirements</h2>
+          <ul>
+            <li><strong>Java:</strong> 21+</li>
+            <li><strong>Server Software:</strong> Paper or Folia 1.21+</li>
+            <li><strong>Required Plugins:</strong> None</li>
+            <li><strong>Optional Plugins:</strong> PlaceholderAPI 2.11.6+ for placeholder parsing and EzDonutDiscord placeholders</li>
+          </ul>
+        </section>
 
-rewards:
-  daily-crate-enabled: true
-  key-command: "crate key give {player} daily 1"</pre></div></section>
-        <section id="first-commands"><h2>First commands to run</h2><ul><li><span class="inline-code">/yp reload</span> after editing config.</li><li><span class="inline-code">/yp warn Notch Spamming chat</span> for a test warning.</li><li><span class="inline-code">/yp crate preview daily</span> to check reward UI.</li></ul></section>
+        <section id="steps"><h2>Steps</h2>
+          <ol>
+            <li>Download the latest plugin jar, or build it from source with <span class="inline-code">mvn package</span>.</li>
+            <li>Place <span class="inline-code">EzDonutDiscord-1.0.0.jar</span> into your server's <span class="inline-code">/plugins/</span> folder.</li>
+            <li>Start your server with a full restart so the plugin can generate <span class="inline-code">/plugins/EzDonutDiscord/config.yml</span>.</li>
+            <li>Open the config and update your Discord invite settings.</li>
+            <li>Run <span class="inline-code">/discord</span> in game to verify clickable invite, action bar, and sound behavior.</li>
+          </ol>
+          <p><strong>Warning:</strong> Always do a full server restart when installing or updating the plugin. Do not use <span class="inline-code">/reload</span>.</p>
+        </section>
+
+        <section id="updating"><h2>Updating</h2>
+          <ol>
+            <li>Stop your server.</li>
+            <li>Replace the old jar with the new one.</li>
+            <li>Start the server again.</li>
+            <li>Review the Configuration page for any new keys before reloading the plugin live.</li>
+          </ol>
+          <p><strong>Tip:</strong> <span class="inline-code">/discord reload</span> is useful for message edits, but full restarts are still the safer path for version updates.</p>
+        </section>
+
+        <section id="uninstalling"><h2>Uninstalling</h2>
+          <ol>
+            <li>Stop your server.</li>
+            <li>Remove the plugin jar from <span class="inline-code">/plugins/</span>.</li>
+            <li>Optionally delete <span class="inline-code">/plugins/EzDonutDiscord/</span> if you also want to remove the config file.</li>
+          </ol>
+        </section>
       `,
-      prev: { id: 'installation', title: 'Installation', desc: 'Return to setup steps.' },
-      next: { id: 'commands', title: 'Commands', desc: 'Full command reference.' }
+      prev: { id: 'faq', title: 'FAQ', desc: 'Back to common support questions.' },
+      next: { id: 'configuration', title: 'Configuration', desc: 'Review all config keys and defaults.' }
     },
-    commands: {
-      title: 'Commands · YourPlugin Docs',
-      topbarTitle: 'Commands',
-      meta: ['Reference', 'Commands'],
-      content: `
-        <h1>Commands</h1>
-        <p class="lead">All built-in commands for admins, moderators, and players.</p>
-        <section id="admin-commands"><h2>Admin commands</h2><div class="table-wrap"><table><thead><tr><th>Command</th><th>Description</th><th>Permission</th></tr></thead><tbody><tr><td><strong>/yp reload</strong></td><td>Reloads all plugin configs.</td><td>yourplugin.admin.reload</td></tr><tr><td><strong>/yp debug on</strong></td><td>Enables debug logging output.</td><td>yourplugin.admin.debug</td></tr><tr><td><strong>/yp migrate</strong></td><td>Migrates data to configured backend.</td><td>yourplugin.admin.migrate</td></tr></tbody></table></div></section>
-        <section id="moderation-commands"><h2>Moderation commands</h2><div class="table-wrap"><table><thead><tr><th>Command</th><th>Description</th><th>Permission</th></tr></thead><tbody><tr><td><strong>/yp warn &lt;player&gt; &lt;reason&gt;</strong></td><td>Creates a warning entry.</td><td>yourplugin.mod.warn</td></tr><tr><td><strong>/yp mute &lt;player&gt; [time]</strong></td><td>Mutes player chat.</td><td>yourplugin.mod.mute</td></tr><tr><td><strong>/yp history &lt;player&gt;</strong></td><td>Shows moderation history.</td><td>yourplugin.mod.history</td></tr></tbody></table></div></section>
-      `,
-      prev: { id: 'quick-start', title: 'Quick Start', desc: 'Back to starter workflow.' },
-      next: { id: 'permissions', title: 'Permissions', desc: 'Permission node details.' }
-    },
-    permissions: {
-      title: 'Permissions · YourPlugin Docs',
-      topbarTitle: 'Permissions',
-      meta: ['Reference', 'Permissions'],
-      content: `
-        <h1>Permissions</h1><p class="lead">Assign roles confidently using this permission map.</p>
-        <section id="permission-groups"><h2>Permission groups</h2><div class="cards-grid"><article class="card"><div class="card-label">Admin</div><h3>Full access</h3><p><span class="inline-code">yourplugin.*</span></p></article><article class="card"><div class="card-label">Moderator</div><h3>Punishment commands</h3><p><span class="inline-code">yourplugin.mod.*</span></p></article><article class="card"><div class="card-label">Helper</div><h3>Read-only tools</h3><p><span class="inline-code">yourplugin.mod.history</span></p></article><article class="card"><div class="card-label">Player</div><h3>User commands</h3><p><span class="inline-code">yourplugin.user.*</span></p></article></div></section>
-      `,
-      prev: { id: 'commands', title: 'Commands', desc: 'Back to command syntax.' },
-      next: { id: 'configuration', title: 'Configuration', desc: 'YAML reference and examples.' }
-    },
+
     configuration: {
-      title: 'Configuration · YourPlugin Docs',
+      title: 'Configuration · EzDonutDiscord Docs',
       topbarTitle: 'Configuration',
-      meta: ['Reference', 'Configuration'],
+      meta: ['Getting Started', 'Configuration'],
       content: `
         <h1>Configuration</h1>
-        <p class="lead">Detailed guide for tuning behavior, storage, and messages.</p>
-        <section id="main-config"><h2>Main config</h2><div class="code-block"><div class="code-head">plugins/YourPlugin/config.yml</div><pre>storage:
-  type: mysql
-  host: localhost
-  port: 3306
-  database: yourplugin
-  username: mc
-  password: change-me
+        <p class="lead">After first run, EzDonutDiscord creates config at <span class="inline-code">/plugins/EzDonutDiscord/config.yml</span>.</p>
 
-chat-filter:
-  enabled: true
-  blocked-words:
-    - badword1
-    - badword2</pre></div></section>
-        <section id="messages"><h2>Messages</h2><p>Edit <span class="inline-code">messages.yml</span> with MiniMessage formatting.</p><div class="code-block"><div class="code-head">messages.yml</div><pre>prefix: "&lt;#4f8cff&gt;&lt;b&gt;YourPlugin&lt;/b&gt;&lt;/#4f8cff&gt;"
-warned: "{prefix} &lt;yellow&gt;You warned &lt;red&gt;{player}&lt;/red&gt;.&lt;/yellow&gt;"
-no-permission: "{prefix} &lt;red&gt;You don't have permission.&lt;/red&gt;"</pre></div></section>
+        <section id="config-yml"><h2>config.yml</h2>
+          <div class="code-block"><div class="code-head">plugins/EzDonutDiscord/config.yml</div><pre># EzDonutDiscord v1.0.0 - config.yml
+link:
+  raw: "https://discord.gg/donutsmp"
+  display: "discord.gg/donutsmp"
+
+message:
+  discord:
+    enabled: true
+    lines:
+      - "&#00A4FCJoin the DonutSMP Discord community!"
+      - "&#00A4FC&l*&r &f&n%link_display%"
+    hover:
+      - "&#00A4FCOpen the Discord invite"
+  actionbar:
+    enabled: true
+    text: "&7The link has been sent in chat!"
+  reload:
+    enabled: true
+    lines:
+      - "&#00A4FC&l*&r &f&nReloaded the config!"
+
+sounds:
+  pling:
+    enabled: true
+    sound: "BLOCK_NOTE_BLOCK_PLING"
+    volume: 0.5
+    pitch: 1.0
+
+placeholderapi:
+  enabled: true</pre></div>
+        </section>
+
+        <section id="options"><h2>Options Reference</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><span class="inline-code">link.raw</span></td><td>String</td><td><span class="inline-code">https://discord.gg/donutsmp</span></td><td>Full URL opened by the clickable invite.</td></tr>
+              <tr><td><span class="inline-code">link.display</span></td><td>String</td><td><span class="inline-code">discord.gg/donutsmp</span></td><td>Visible invite text in chat.</td></tr>
+              <tr><td><span class="inline-code">message.discord.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Enables main <span class="inline-code">/discord</span> chat output.</td></tr>
+              <tr><td><span class="inline-code">message.discord.lines</span></td><td>List&lt;String&gt;</td><td>2 lines</td><td>Chat lines sent by <span class="inline-code">/discord</span>.</td></tr>
+              <tr><td><span class="inline-code">message.discord.hover</span></td><td>List&lt;String&gt;</td><td>1 line</td><td>Hover text on clickable invite.</td></tr>
+              <tr><td><span class="inline-code">message.actionbar.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Enables action bar confirmation.</td></tr>
+              <tr><td><span class="inline-code">message.actionbar.text</span></td><td>String</td><td><span class="inline-code">&7The link has been sent in chat!</span></td><td>Action bar text after command runs.</td></tr>
+              <tr><td><span class="inline-code">message.reload.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Enables custom response after reload.</td></tr>
+              <tr><td><span class="inline-code">message.reload.lines</span></td><td>List&lt;String&gt;</td><td>1 line</td><td>Reload confirmation lines.</td></tr>
+              <tr><td><span class="inline-code">sounds.pling.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Plays sound after command execution.</td></tr>
+              <tr><td><span class="inline-code">sounds.pling.sound</span></td><td>String</td><td><span class="inline-code">BLOCK_NOTE_BLOCK_PLING</span></td><td>Bukkit sound enum or namespaced key.</td></tr>
+              <tr><td><span class="inline-code">sounds.pling.volume</span></td><td>Double</td><td><span class="inline-code">0.5</span></td><td>Pling playback volume.</td></tr>
+              <tr><td><span class="inline-code">sounds.pling.pitch</span></td><td>Double</td><td><span class="inline-code">1.0</span></td><td>Pling playback pitch.</td></tr>
+              <tr><td><span class="inline-code">placeholderapi.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Controls PlaceholderAPI parsing and expansion registration.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="message-placeholders"><h2>Message Placeholders</h2>
+          <ul>
+            <li><span class="inline-code">%link_raw%</span> inserts the full invite URL from <span class="inline-code">link.raw</span>.</li>
+            <li><span class="inline-code">%link_display%</span> inserts visible invite text from <span class="inline-code">link.display</span>.</li>
+          </ul>
+          <p><strong>Tip:</strong> PlaceholderAPI placeholders are parsed inside EzDonutDiscord messages when PlaceholderAPI is installed, <span class="inline-code">placeholderapi.enabled</span> is <span class="inline-code">true</span>, and sender is a player.</p>
+        </section>
+
+        <section id="formatting"><h2>Formatting Notes</h2>
+          <ul>
+            <li>Standard Bukkit color codes such as <span class="inline-code">&7</span>, <span class="inline-code">&c</span>, and <span class="inline-code">&l</span> are supported.</li>
+            <li>Hex colors such as <span class="inline-code">&#00A4FC</span> are supported.</li>
+            <li>The clickable invite appears only on lines that include <span class="inline-code">%link_display%</span>.</li>
+          </ul>
+        </section>
       `,
-      prev: { id: 'permissions', title: 'Permissions', desc: 'Back to permission nodes.' },
-      next: { id: 'placeholders', title: 'Placeholders', desc: 'PlaceholderAPI reference.' }
+      prev: { id: 'installation', title: 'Installation', desc: 'Back to setup and update steps.' },
+      next: { id: 'discord-message-flow', title: 'Discord Message Flow', desc: 'Understand exactly what /discord does.' }
     },
-    placeholders: {
-      title: 'Placeholders · YourPlugin Docs',
-      topbarTitle: 'Placeholders',
-      meta: ['Reference', 'PlaceholderAPI'],
+
+    'discord-message-flow': {
+      title: 'Discord Message Flow · EzDonutDiscord Docs',
+      topbarTitle: 'Discord Message Flow',
+      meta: ['Features', 'Command Behavior'],
       content: `
-        <h1>Placeholders</h1>
-        <p class="lead">Use these placeholders in scoreboards, chat, and GUI lore.</p>
-        <section id="player-placeholders"><h2>Player placeholders</h2><div class="table-wrap"><table><thead><tr><th>Placeholder</th><th>Example Output</th></tr></thead><tbody><tr><td><strong>%yourplugin_warnings%</strong></td><td>2</td></tr><tr><td><strong>%yourplugin_mute_remaining%</strong></td><td>8m 43s</td></tr><tr><td><strong>%yourplugin_rank%</strong></td><td>Veteran</td></tr></tbody></table></div></section>
-        <section id="server-placeholders"><h2>Server placeholders</h2><div class="table-wrap"><table><thead><tr><th>Placeholder</th><th>Example Output</th></tr></thead><tbody><tr><td><strong>%yourplugin_online_staff%</strong></td><td>3</td></tr><tr><td><strong>%yourplugin_active_mutes%</strong></td><td>5</td></tr></tbody></table></div></section>
+        <h1>Discord Message Flow</h1>
+        <p class="lead">EzDonutDiscord assembles a clickable invite, optional hover text, optional action bar feedback, and optional sound feedback from config.</p>
+
+        <section id="what-happens"><h2>What Happens On <span class="inline-code">/discord</span></h2>
+          <ol>
+            <li>The plugin checks <span class="inline-code">ezdonutdiscord.discord</span> or <span class="inline-code">ezdonutdiscord.admin</span>.</li>
+            <li>If <span class="inline-code">message.discord.enabled</span> is <span class="inline-code">false</span>, sender gets a disabled notice instead of invite.</li>
+            <li>Each line in <span class="inline-code">message.discord.lines</span> is processed and sent in order.</li>
+            <li>If a line contains <span class="inline-code">%link_display%</span>, that segment becomes clickable and opens <span class="inline-code">link.raw</span>.</li>
+            <li>If <span class="inline-code">message.discord.hover</span> has text, it is attached as hover text to clickable invite.</li>
+            <li>If sender is a player, plugin can send action bar and play configured pling sound.</li>
+          </ol>
+        </section>
+
+        <section id="practical-notes"><h2>Practical Notes</h2>
+          <ul>
+            <li>Clickable portion is created only from <span class="inline-code">%link_display%</span>. Plain text lines stay plain text.</li>
+            <li><span class="inline-code">/discord reload</span> reuses the same pling sound profile for players when sound feedback is enabled.</li>
+            <li>The plugin hides namespaced command variant <span class="inline-code">ezdonutdiscord:discord</span> from normal player command lists unless player has reload-level access.</li>
+          </ul>
+        </section>
       `,
-      prev: { id: 'configuration', title: 'Configuration', desc: 'Back to config reference.' },
-      next: { id: 'faq', title: 'FAQ', desc: 'Common setup and troubleshooting.' }
+      prev: { id: 'configuration', title: 'Configuration', desc: 'Back to config keys and placeholders.' },
+      next: { id: 'placeholderapi', title: 'PlaceholderAPI', desc: 'Review integration behavior and placeholders.' }
     },
-    faq: {
-      title: 'FAQ · YourPlugin Docs',
-      topbarTitle: 'FAQ',
-      meta: ['Reference', 'Troubleshooting'],
+
+    placeholderapi: {
+      title: 'PlaceholderAPI · EzDonutDiscord Docs',
+      topbarTitle: 'PlaceholderAPI',
+      meta: ['Features', 'Integrations'],
       content: `
-        <h1>FAQ</h1>
-        <p class="lead">Answers to the most common install and runtime issues.</p>
-        <section id="common-issues"><h2>Common issues</h2><div class="faq-card"><h3>The plugin says “missing dependency PlaceholderAPI”</h3><p>Install PlaceholderAPI and restart. Soft-depend placeholders will not load until dependency is available.</p></div><div class="faq-card"><h3>Commands return no-permission even for op users</h3><p>Check LuckPerms context and inherited groups. OP alone may be disabled if your server config enforces permission plugins.</p></div><div class="faq-card"><h3>How do I deploy docs to GitHub Pages automatically?</h3><p>This template ships with a GitHub Actions workflow in <span class="inline-code">.github/workflows/deploy-pages.yml</span> that publishes on every push to <span class="inline-code">main</span>.</p></div></section>
+        <h1>PlaceholderAPI</h1>
+        <p class="lead">PlaceholderAPI support is optional. EzDonutDiscord soft-depends on PlaceholderAPI, detects it at runtime, and can parse placeholders in messages while registering its own expansion values.</p>
+
+        <section id="built-in"><h2>Built-In EzDonutDiscord Placeholders</h2>
+          <ul>
+            <li><span class="inline-code">%ezdonutdiscord_link_raw%</span></li>
+            <li><span class="inline-code">%ezdonutdiscord_link_display%</span></li>
+          </ul>
+          <p>These values are read directly from <span class="inline-code">link.raw</span> and <span class="inline-code">link.display</span> in <span class="inline-code">config.yml</span>.</p>
+        </section>
+
+        <section id="inside-messages"><h2>Placeholder Parsing Inside Messages</h2>
+          <p>EzDonutDiscord can parse PlaceholderAPI placeholders in:</p>
+          <ul>
+            <li><span class="inline-code">message.discord.lines</span></li>
+            <li><span class="inline-code">message.discord.hover</span></li>
+            <li><span class="inline-code">message.actionbar.text</span></li>
+            <li><span class="inline-code">message.reload.lines</span></li>
+          </ul>
+          <p>Parsing only happens when PlaceholderAPI is installed, <span class="inline-code">placeholderapi.enabled</span> is <span class="inline-code">true</span>, and sender is a player.</p>
+        </section>
+
+        <section id="reload"><h2>Reload Behavior</h2>
+          <p>Running <span class="inline-code">/discord reload</span> refreshes PlaceholderAPI integration. If PlaceholderAPI was added, removed, or disabled, EzDonutDiscord updates expansion registration during reload cycle.</p>
+        </section>
       `,
-      prev: { id: 'placeholders', title: 'Placeholders', desc: 'Back to PlaceholderAPI list.' },
-      next: { id: 'index', title: 'Introduction', desc: 'Return to docs homepage.' }
+      prev: { id: 'discord-message-flow', title: 'Discord Message Flow', desc: 'Back to command rendering flow.' },
+      next: { id: 'commands', title: 'Commands', desc: 'See command and permission matrix.' }
+    },
+
+    commands: {
+      title: 'Commands · EzDonutDiscord Docs',
+      topbarTitle: 'Commands',
+      meta: ['Usage', 'Commands'],
+      content: `
+        <h1>Commands</h1>
+
+        <section id="command-table"><h2>Command Reference</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Command</th><th>Description</th><th>Permission</th></tr></thead>
+            <tbody>
+              <tr><td><strong>/discord</strong></td><td>Sends configured Discord invite in chat and, for players, can also show action bar and play pling sound.</td><td><span class="inline-code">ezdonutdiscord.discord</span></td></tr>
+              <tr><td><strong>/discord reload</strong></td><td>Reloads <span class="inline-code">config.yml</span> and refreshes PlaceholderAPI integration state.</td><td><span class="inline-code">ezdonutdiscord.reload</span></td></tr>
+            </tbody>
+          </table></div>
+          <p><strong>Tip:</strong> The <span class="inline-code">reload</span> tab completion is shown only to senders who already have reload access.</p>
+        </section>
+      `,
+      prev: { id: 'placeholderapi', title: 'PlaceholderAPI', desc: 'Back to integration details.' },
+      next: { id: 'permissions', title: 'Permissions', desc: 'Check permission defaults and best practices.' }
+    },
+
+    permissions: {
+      title: 'Permissions · EzDonutDiscord Docs',
+      topbarTitle: 'Permissions',
+      meta: ['Usage', 'Permissions'],
+      content: `
+        <h1>Permissions</h1>
+
+        <section id="permission-table"><h2>Permission Nodes</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Permission</th><th>Description</th><th>Default</th></tr></thead>
+            <tbody>
+              <tr><td><span class="inline-code">ezdonutdiscord.discord</span></td><td>Allows use of <span class="inline-code">/discord</span>.</td><td><span class="inline-code">true</span></td></tr>
+              <tr><td><span class="inline-code">ezdonutdiscord.reload</span></td><td>Allows use of <span class="inline-code">/discord reload</span> and exposes the <span class="inline-code">reload</span> tab completion.</td><td><span class="inline-code">op</span></td></tr>
+              <tr><td><span class="inline-code">ezdonutdiscord.admin</span></td><td>Grants all EzDonutDiscord permissions.</td><td><span class="inline-code">op</span></td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="warning"><h2>Operational Warning</h2>
+          <p>Manage permissions with a permissions plugin such as <a href="https://luckperms.net/" target="_blank" rel="noreferrer">LuckPerms</a> instead of relying on <span class="inline-code">op</span> for staff access.</p>
+        </section>
+      `,
+      prev: { id: 'commands', title: 'Commands', desc: 'Back to command behaviors.' },
+      next: { id: 'index', title: 'EzDonutDiscord', desc: 'Return to project overview.' }
     }
   }
 };
