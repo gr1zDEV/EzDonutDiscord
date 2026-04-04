@@ -57,6 +57,15 @@ window.DOCS_DATA = {
           </table></div>
         </section>
 
+        <section id="bstats"><h2>bStats Total Servers</h2>
+          <p>Live total server graph pulled directly from bStats project ID <span class="inline-code">30562</span>.</p>
+          <div class="stats-embed">
+            <a href="https://bstats.org/plugin/bukkit/EzDonutDiscord/30562" target="_blank" rel="noreferrer">
+              <img src="https://bstats.org/signatures/bukkit/30562.svg" alt="EzDonutDiscord bStats signature graph showing total servers" loading="lazy" />
+            </a>
+          </div>
+        </section>
+
         <section id="requirements"><h2>Requirements</h2>
           <div class="table-wrap"><table>
             <thead><tr><th>Requirement</th><th>Version</th></tr></thead>

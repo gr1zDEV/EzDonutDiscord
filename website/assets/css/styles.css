@@ -212,6 +212,22 @@ ol, ul { margin-top: 16px; padding-left: 22px; }
   font-size: 14px;
 }
 
+
+.stats-embed {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+}
+.stats-embed img {
+  width: min(100%, 680px);
+  height: auto;
+  display: block;
+}
+
 .code-block, .table-wrap {
   margin-top: 18px;
   border: 1px solid var(--line);
