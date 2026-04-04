@@ -25,7 +25,7 @@ EzDonutDiscord is a lightweight Paper and Folia plugin that gives players a poli
 
 ## bStats Total Servers
 
-[![bStats graph for project 30562](https://bstats.org/signatures/bukkit/30562.svg)](https://bstats.org/plugin/bukkit/EzDonutDiscord/30562)
+[![bStats graph for project EzDonutDiscord](https://bstats.org/signatures/bukkit/EzDonutDiscord.svg)](https://bstats.org/plugin/bukkit/EzDonutDiscord/30562)
 
 ## Requirements
 
