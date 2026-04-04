@@ -1,31 +1,35 @@
+---
+description: PlaceholderAPI integration behavior and placeholder list.
+---
+
 # PlaceholderAPI
 
-PlaceholderAPI support in EzDonutDiscord is optional. The plugin soft-depends on PlaceholderAPI, detects it at runtime, and can both parse PlaceholderAPI placeholders inside its own messages and register an expansion with EzDonutDiscord-specific values.
+PlaceholderAPI support is optional. EzDonutDiscord detects PlaceholderAPI at runtime and can both parse placeholders inside its messages and register EzDonutDiscord-specific placeholders.
 
 ## Built-In EzDonutDiscord Placeholders
 
-When PlaceholderAPI is installed and support is enabled, EzDonutDiscord registers these placeholders:
+When PlaceholderAPI is installed and enabled, EzDonutDiscord registers:
 
 - `%ezdonutdiscord_link_raw%`
 - `%ezdonutdiscord_link_display%`
 
-These values are read directly from `link.raw` and `link.display` in `config.yml`.
+Values are read from `link.raw` and `link.display` in `config.yml`.
 
-## Placeholder Parsing Inside Messages
+## Parsing Inside Plugin Messages
 
-EzDonutDiscord can also parse PlaceholderAPI placeholders inside:
+EzDonutDiscord can parse PlaceholderAPI placeholders inside:
 
 - `message.discord.lines`
 - `message.discord.hover`
 - `message.actionbar.text`
 - `message.reload.lines`
 
-Parsing only happens when all of the following are true:
+Parsing occurs only when all conditions are true:
 
-- PlaceholderAPI is installed on the server
+- PlaceholderAPI is installed
 - `placeholderapi.enabled` is `true`
-- The sender is a player
+- sender is a player
 
 ## Reload Behavior
 
-Running `/discord reload` also refreshes PlaceholderAPI integration. If PlaceholderAPI was added, removed, or disabled, EzDonutDiscord updates its expansion registration during the reload cycle.
+Running `/discord reload` refreshes PlaceholderAPI integration. If PlaceholderAPI was added, removed, or disabled, EzDonutDiscord updates expansion registration during reload.

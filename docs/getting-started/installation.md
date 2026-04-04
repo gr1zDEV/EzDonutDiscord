@@ -1,33 +1,41 @@
+---
+description: Install, update, and remove EzDonutDiscord safely.
+---
+
 # Installation
+
+Use this guide to install EzDonutDiscord on Paper or Folia, update it cleanly, and remove it without leaving stale files.
 
 ## Requirements
 
-- **Java:** 21+
-- **Server Software:** Paper or Folia 1.21+
-- **Required Plugins:** None
-- **Optional Plugins:** PlaceholderAPI 2.11.6+ if you want placeholder parsing or EzDonutDiscord placeholders
+| Item | Required Version |
+|---|---|
+| Java | 21+ |
+| Server Software | Paper or Folia 1.21+ |
+| Required Plugins | None |
+| Optional Plugins | PlaceholderAPI 2.11.6+ |
 
-## Steps
+## Install Steps
 
-1. Download the latest plugin jar, or build it from source with `mvn package`.
-2. Place `EzDonutDiscord-1.0.0.jar` into your server's `/plugins/` folder.
-3. Start your server with a full restart so the plugin can generate `/plugins/EzDonutDiscord/config.yml`.
-4. Open the config and update your Discord invite settings.
-5. Run `/discord` in game to verify the clickable invite, action bar, and sound behavior.
+1. Download the latest plugin jar, or build from source with `mvn package`.
+2. Put `EzDonutDiscord-1.0.0.jar` in your `/plugins/` folder.
+3. Start the server with a full restart to generate `/plugins/EzDonutDiscord/config.yml`.
+4. Update your Discord invite values in the config.
+5. Run `/discord` in-game to verify chat output, action bar, and sound.
 
-> Warning: Always do a full server restart when installing or updating the plugin. Do not use `/reload`.
+> Warning: Do a full restart when installing or updating. Avoid Bukkit `/reload`.
 
-## Updating
+## Update Steps
 
 1. Stop your server.
-2. Replace the old jar with the new one.
-3. Start the server again.
-4. Review the [Configuration](configuration.md) page for any new keys before reloading the plugin live.
+2. Replace the existing jar with the new jar.
+3. Start the server.
+4. Review [Configuration](configuration.md) for any new keys.
 
-> Tip: `/discord reload` is useful for message edits, but full restarts are still the safer path for version updates.
+> Tip: `/discord reload` is best for message/config edits, not binary upgrades.
 
-## Uninstalling
+## Uninstall Steps
 
 1. Stop your server.
 2. Remove the plugin jar from `/plugins/`.
-3. Optionally delete `/plugins/EzDonutDiscord/` if you also want to remove the config file.
+3. Optionally delete `/plugins/EzDonutDiscord/` to remove config data.

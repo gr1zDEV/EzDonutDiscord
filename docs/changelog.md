@@ -1,7 +1,12 @@
+---
+description: Release history for EzDonutDiscord.
+---
+
 # Changelog
 
-## v1.0.0 - Latest
-*Released: TBD*
+## v1.0.0 (Latest)
+
+**Release date:** TBD
 
 ### Added
 
