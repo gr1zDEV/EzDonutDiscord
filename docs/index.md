@@ -1,12 +1,12 @@
 ---
-description: Simple Folia-safe Discord command plugin for Paper.
+description: Lightweight Discord invite command plugin for Paper and Folia.
 ---
 
 # EzDonutDiscord
 
-EzDonutDiscord is a lightweight Paper and Folia plugin that gives players a polished `/discord` command. It sends a configurable clickable invite in chat, can follow up with an action bar and a pling sound, and includes optional PlaceholderAPI support for both message parsing and standalone placeholders.
+EzDonutDiscord is a lightweight Paper/Folia plugin that provides a polished `/discord` command with configurable clickable invite messaging, optional action bar feedback, optional sound, and optional PlaceholderAPI support.
 
-## Features
+## Highlights
 
 - Clickable Discord invite with hover text
 - Configurable chat, action bar, and reload messages
@@ -18,7 +18,7 @@ EzDonutDiscord is a lightweight Paper and Folia plugin that gives players a poli
 ## Downloads
 
 | Platform | Link |
-|----------|------|
+|---|---|
 | GitHub Releases | Not configured in this repository |
 | SpigotMC | Not published |
 | BuiltByBit | Not published |
@@ -30,7 +30,7 @@ EzDonutDiscord is a lightweight Paper and Folia plugin that gives players a poli
 ## Requirements
 
 | Requirement | Version |
-|-------------|---------|
+|---|---|
 | Java | 21+ |
 | Paper / Folia | 1.21+ |
 | Required Plugins | None |
