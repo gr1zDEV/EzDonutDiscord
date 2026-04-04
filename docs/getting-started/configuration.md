@@ -39,22 +39,47 @@ placeholderapi: # PlaceholderAPI integration settings
 
 ## Options Reference
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `link.raw` | String | `https://discord.gg/donutsmp` | Full URL opened when the clickable invite is pressed. |
-| `link.display` | String | `discord.gg/donutsmp` | Text shown in chat for the invite component. |
-| `message.discord.enabled` | Boolean | `true` | Enables the main `/discord` chat output. |
-| `message.discord.lines` | List<String> | `2 lines` | Chat lines sent by `/discord`; `%link_display%` and `%link_raw%` are replaced before sending. |
-| `message.discord.hover` | List<String> | `1 line` | Hover text attached to the clickable invite when a `%link_display%` line is present. |
-| `message.actionbar.enabled` | Boolean | `true` | Enables the action bar confirmation for players. |
-| `message.actionbar.text` | String | `&7The link has been sent in chat!` | Text shown in the action bar after `/discord`. |
-| `message.reload.enabled` | Boolean | `true` | Enables the custom response after `/discord reload`. |
-| `message.reload.lines` | List<String> | `1 line` | Reload confirmation message lines. |
-| `sounds.pling.enabled` | Boolean | `true` | Plays the configured sound after `/discord` and `/discord reload`. |
-| `sounds.pling.sound` | String | `BLOCK_NOTE_BLOCK_PLING` | Sound enum or namespaced key used for playback. |
-| `sounds.pling.volume` | Double | `0.5` | Volume used for the pling sound. |
-| `sounds.pling.pitch` | Double | `1.0` | Pitch used for the pling sound. |
-| `placeholderapi.enabled` | Boolean | `true` | Enables PlaceholderAPI parsing and automatic expansion registration when PlaceholderAPI is installed. |
+### `link`
+
+```yaml
+raw: "https://discord.gg/donutsmp" # Type: String | Full URL opened when the clickable invite is pressed
+display: "discord.gg/donutsmp" # Type: String | Text shown in chat for the invite component
+```
+
+### `message`
+
+```yaml
+discord:
+  enabled: true # Type: Boolean | Enables the main /discord chat output
+  lines: # Type: List<String> | Default: 2 lines | %link_display% and %link_raw% are replaced before sending
+    - "&#00A4FCJoin the DonutSMP Discord community!"
+    - "&#00A4FC&l*&r &f&n%link_display%"
+  hover: # Type: List<String> | Default: 1 line | Hover text attached to clickable invite lines
+    - "&#00A4FCOpen the Discord invite"
+actionbar:
+  enabled: true # Type: Boolean | Enables the action bar confirmation for players
+  text: "&7The link has been sent in chat!" # Type: String | Text shown in the action bar after /discord
+reload:
+  enabled: true # Type: Boolean | Enables the custom response after /discord reload
+  lines: # Type: List<String> | Default: 1 line | Reload confirmation message lines
+    - "&#00A4FC&l*&r &f&nReloaded the config!"
+```
+
+### `sounds`
+
+```yaml
+pling:
+  enabled: true # Type: Boolean | Plays the configured sound after /discord and /discord reload
+  sound: "BLOCK_NOTE_BLOCK_PLING" # Type: String | Bukkit sound enum or namespaced key used for playback
+  volume: 0.5 # Type: Double | Volume used for the pling sound
+  pitch: 1.0 # Type: Double | Pitch used for the pling sound
+```
+
+### `placeholderapi`
+
+```yaml
+enabled: true # Type: Boolean | Enables PlaceholderAPI parsing and automatic expansion registration when PlaceholderAPI is installed
+```
 
 ## Message Placeholders
 
