@@ -58,10 +58,10 @@ window.DOCS_DATA = {
         </section>
 
         <section id="bstats"><h2>bStats Total Servers</h2>
-          <p>Live total server graph pulled directly from bStats project ID <span class="inline-code">30562</span>.</p>
+          <p>Live total server graph pulled directly from bStats project <span class="inline-code">EzDonutDiscord</span>.</p>
           <div class="stats-embed">
             <a href="https://bstats.org/plugin/bukkit/EzDonutDiscord/30562" target="_blank" rel="noreferrer">
-              <img src="https://bstats.org/signatures/bukkit/30562.svg" alt="EzDonutDiscord bStats signature graph showing total servers" loading="lazy" />
+              <img src="https://bstats.org/signatures/bukkit/EzDonutDiscord.svg" alt="EzDonutDiscord bStats signature graph showing total servers" loading="lazy" />
             </a>
           </div>
         </section>
