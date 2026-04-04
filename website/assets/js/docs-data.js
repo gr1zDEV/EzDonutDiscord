@@ -12,7 +12,8 @@ window.DOCS_DATA = {
       title: 'Usage Category',
       pages: [
         { id: 'commands', label: 'Commands' },
-        { id: 'permissions', label: 'Permissions' }
+        { id: 'permissions', label: 'Permissions' },
+        { id: 'troubleshooting', label: 'Troubleshooting' }
       ]
     },
     {
@@ -121,6 +122,10 @@ window.DOCS_DATA = {
 
         <section id="reloading"><h2>Can I reload the config without restarting the whole server?</h2>
           <p>Yes. Use <span class="inline-code">/discord reload</span>. For jar updates, a full restart is still recommended.</p>
+        </section>
+
+        <section id="checklist"><h2>Is there a full issue checklist for common problems?</h2>
+          <p>Yes. Use the <a href="#/troubleshooting">Troubleshooting</a> page for symptom-based fixes.</p>
         </section>
       `,
       prev: { id: 'changelog', title: 'Changelog', desc: 'Back to the latest release notes.' },
@@ -370,6 +375,60 @@ placeholderapi:
         </section>
       `,
       prev: { id: 'commands', title: 'Commands', desc: 'Back to command behaviors.' },
+      next: { id: 'troubleshooting', title: 'Troubleshooting', desc: 'Fix common setup and runtime issues.' }
+    },
+
+    troubleshooting: {
+      title: 'Troubleshooting · EzDonutDiscord Docs',
+      topbarTitle: 'Troubleshooting',
+      meta: ['Usage', 'Support'],
+      content: `
+        <h1>Troubleshooting</h1>
+        <p class="lead">Use this checklist when <span class="inline-code">/discord</span> does not behave as expected.</p>
+
+        <section id="quick-checks"><h2>Quick Checks</h2>
+          <ol>
+            <li>Confirm server runs <strong>Java 21+</strong> and <strong>Paper/Folia 1.21+</strong>.</li>
+            <li>Confirm plugin jar is in <span class="inline-code">/plugins/</span> and server had a full restart.</li>
+            <li>Confirm <span class="inline-code">/plugins/EzDonutDiscord/config.yml</span> exists and is valid YAML.</li>
+            <li>Confirm player has the required permission node.</li>
+            <li>Run <span class="inline-code">/discord reload</span> after config edits.</li>
+          </ol>
+        </section>
+
+        <section id="symptom-guide"><h2>Symptom Guide</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Symptom</th><th>Most likely cause</th><th>What to do</th></tr></thead>
+            <tbody>
+              <tr><td>Nothing happens with <span class="inline-code">/discord</span></td><td>Missing <span class="inline-code">ezdonutdiscord.discord</span></td><td>Grant <span class="inline-code">ezdonutdiscord.discord</span> (or <span class="inline-code">ezdonutdiscord.admin</span>) via LuckPerms.</td></tr>
+              <tr><td><span class="inline-code">/discord reload</span> is unknown or denied</td><td>Missing <span class="inline-code">ezdonutdiscord.reload</span></td><td>Grant <span class="inline-code">ezdonutdiscord.reload</span> to trusted staff only.</td></tr>
+              <tr><td>Invite text shows but is not clickable</td><td><span class="inline-code">%link_display%</span> missing from line</td><td>Add <span class="inline-code">%link_display%</span> to one of <span class="inline-code">message.discord.lines</span>.</td></tr>
+              <tr><td>Click opens wrong URL</td><td><span class="inline-code">link.raw</span> misconfigured</td><td>Set <span class="inline-code">link.raw</span> to full invite URL including <span class="inline-code">https://</span>.</td></tr>
+              <tr><td>Hover text does not show</td><td><span class="inline-code">message.discord.hover</span> empty</td><td>Add at least one hover line under <span class="inline-code">message.discord.hover</span>.</td></tr>
+              <tr><td>Action bar does not appear</td><td>Action bar disabled or sender is console</td><td>Set <span class="inline-code">message.actionbar.enabled</span> to <span class="inline-code">true</span> and test as player.</td></tr>
+              <tr><td>Sound does not play</td><td>Sound disabled or invalid key</td><td>Enable <span class="inline-code">sounds.pling.enabled</span> and verify sound name.</td></tr>
+              <tr><td>PlaceholderAPI placeholders stay raw text</td><td>PlaceholderAPI missing/disabled or console sender</td><td>Install PlaceholderAPI, keep <span class="inline-code">placeholderapi.enabled</span> true, and test as player.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="papi-checklist"><h2>PlaceholderAPI Debug Checklist</h2>
+          <ul>
+            <li>Verify PlaceholderAPI is installed and loaded during startup.</li>
+            <li>Run <span class="inline-code">/papi parse me %ezdonutdiscord_link_raw%</span> to verify expansion output.</li>
+            <li>If PlaceholderAPI was installed after boot, run <span class="inline-code">/discord reload</span> or restart.</li>
+          </ul>
+        </section>
+
+        <section id="safe-ops"><h2>Safe Operations</h2>
+          <ul>
+            <li>Prefer full restarts for plugin updates.</li>
+            <li>Use <span class="inline-code">/discord reload</span> for message/config edits only.</li>
+            <li>Avoid Bukkit <span class="inline-code">/reload</span>.</li>
+          </ul>
+        </section>
+      `,
+      prev: { id: 'permissions', title: 'Permissions', desc: 'Back to permission defaults and guidance.' },
       next: { id: 'index', title: 'EzDonutDiscord', desc: 'Return to project overview.' }
     }
   }

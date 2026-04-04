@@ -14,3 +14,6 @@ A: The plugin only exposes the `reload` tab completion to senders with `ezdonutd
 
 **Q: Can I reload the config without restarting the whole server?**  
 A: Yes. Use `/discord reload`. For jar updates, a full restart is still recommended.
+
+**Q: Is there a full issue checklist for common problems?**  
+A: Yes. See the [Troubleshooting](usage/troubleshooting.md) page for symptom-based fixes.
