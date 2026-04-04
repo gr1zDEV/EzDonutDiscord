@@ -4,29 +4,24 @@ window.DOCS_DATA = {
       title: 'Overview',
       pages: [
         { id: 'index', label: 'EzDonutDiscord' },
-        { id: 'changelog', label: 'Changelog' },
-        { id: 'faq', label: 'FAQ' }
-      ]
-    },
-    {
-      title: 'Getting Started',
-      pages: [
         { id: 'installation', label: 'Installation' },
         { id: 'configuration', label: 'Configuration' }
       ]
     },
     {
-      title: 'Features',
-      pages: [
-        { id: 'discord-message-flow', label: 'Discord Message Flow' },
-        { id: 'placeholderapi', label: 'PlaceholderAPI' }
-      ]
-    },
-    {
-      title: 'Usage',
+      title: 'Usage Category',
       pages: [
         { id: 'commands', label: 'Commands' },
         { id: 'permissions', label: 'Permissions' }
+      ]
+    },
+    {
+      title: 'Resources',
+      pages: [
+        { id: 'changelog', label: 'Changelog' },
+        { id: 'faq', label: 'FAQ' },
+        { id: 'placeholderapi', label: 'PlaceholderAPI' },
+        { id: 'discord-message-flow', label: 'Discord Message Flow' }
       ]
     }
   ],
