@@ -232,25 +232,35 @@ placeholderapi:
         </section>
 
         <section id="options"><h2>Options Reference</h2>
-          <div class="table-wrap"><table>
-            <thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
-            <tbody>
-              <tr><td><span class="inline-code">link.raw</span></td><td>String</td><td><span class="inline-code">https://discord.gg/donutsmp</span></td><td>Full URL opened by the clickable invite.</td></tr>
-              <tr><td><span class="inline-code">link.display</span></td><td>String</td><td><span class="inline-code">discord.gg/donutsmp</span></td><td>Visible invite text in chat.</td></tr>
-              <tr><td><span class="inline-code">message.discord.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Enables main <span class="inline-code">/discord</span> chat output.</td></tr>
-              <tr><td><span class="inline-code">message.discord.lines</span></td><td>List&lt;String&gt;</td><td>2 lines</td><td>Chat lines sent by <span class="inline-code">/discord</span>.</td></tr>
-              <tr><td><span class="inline-code">message.discord.hover</span></td><td>List&lt;String&gt;</td><td>1 line</td><td>Hover text on clickable invite.</td></tr>
-              <tr><td><span class="inline-code">message.actionbar.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Enables action bar confirmation.</td></tr>
-              <tr><td><span class="inline-code">message.actionbar.text</span></td><td>String</td><td><span class="inline-code">&7The link has been sent in chat!</span></td><td>Action bar text after command runs.</td></tr>
-              <tr><td><span class="inline-code">message.reload.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Enables custom response after reload.</td></tr>
-              <tr><td><span class="inline-code">message.reload.lines</span></td><td>List&lt;String&gt;</td><td>1 line</td><td>Reload confirmation lines.</td></tr>
-              <tr><td><span class="inline-code">sounds.pling.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Plays sound after command execution.</td></tr>
-              <tr><td><span class="inline-code">sounds.pling.sound</span></td><td>String</td><td><span class="inline-code">BLOCK_NOTE_BLOCK_PLING</span></td><td>Bukkit sound enum or namespaced key.</td></tr>
-              <tr><td><span class="inline-code">sounds.pling.volume</span></td><td>Double</td><td><span class="inline-code">0.5</span></td><td>Pling playback volume.</td></tr>
-              <tr><td><span class="inline-code">sounds.pling.pitch</span></td><td>Double</td><td><span class="inline-code">1.0</span></td><td>Pling playback pitch.</td></tr>
-              <tr><td><span class="inline-code">placeholderapi.enabled</span></td><td>Boolean</td><td><span class="inline-code">true</span></td><td>Controls PlaceholderAPI parsing and expansion registration.</td></tr>
-            </tbody>
-          </table></div>
+          <h3><span class="inline-code">link</span></h3>
+          <div class="code-block"><pre>raw: "https://discord.gg/donutsmp" # Type: String | Full URL opened when the clickable invite is pressed
+display: "discord.gg/donutsmp" # Type: String | Text shown in chat for the invite component</pre></div>
+
+          <h3><span class="inline-code">message</span></h3>
+          <div class="code-block"><pre>discord:
+  enabled: true # Type: Boolean | Enables the main /discord chat output
+  lines: # Type: List&lt;String&gt; | Default: 2 lines | %link_display% and %link_raw% are replaced before sending
+    - "&#00A4FCJoin the DonutSMP Discord community!"
+    - "&#00A4FC&l*&r &f&n%link_display%"
+  hover: # Type: List&lt;String&gt; | Default: 1 line | Hover text attached to clickable invite lines
+    - "&#00A4FCOpen the Discord invite"
+actionbar:
+  enabled: true # Type: Boolean | Enables the action bar confirmation for players
+  text: "&7The link has been sent in chat!" # Type: String | Text shown in the action bar after /discord
+reload:
+  enabled: true # Type: Boolean | Enables the custom response after /discord reload
+  lines: # Type: List&lt;String&gt; | Default: 1 line | Reload confirmation message lines
+    - "&#00A4FC&l*&r &f&nReloaded the config!"</pre></div>
+
+          <h3><span class="inline-code">sounds</span></h3>
+          <div class="code-block"><pre>pling:
+  enabled: true # Type: Boolean | Plays the configured sound after /discord and /discord reload
+  sound: "BLOCK_NOTE_BLOCK_PLING" # Type: String | Bukkit sound enum or namespaced key used for playback
+  volume: 0.5 # Type: Double | Volume used for the pling sound
+  pitch: 1.0 # Type: Double | Pitch used for the pling sound</pre></div>
+
+          <h3><span class="inline-code">placeholderapi</span></h3>
+          <div class="code-block"><pre>enabled: true # Type: Boolean | Enables PlaceholderAPI parsing and automatic expansion registration when PlaceholderAPI is installed</pre></div>
         </section>
 
         <section id="message-placeholders"><h2>Message Placeholders</h2>
